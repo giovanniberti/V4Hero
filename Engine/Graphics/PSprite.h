@@ -21,7 +21,6 @@ public:
     float lx = 0, ly = 0;
     float angle = 0;
     bool exported = false;
-    PSprite();
     void loadFromFile(std::string file, int q);
     void loadFromFile(std::string file, int q, int r);
     void setRepeated(bool r);
@@ -45,6 +44,7 @@ public:
     void update(sf::RenderWindow& window);
     void saveToFile(std::string file);
 
+    PSprite() = default;
     PSprite(const PSprite& other);
     PSprite& operator=(PSprite other);
 

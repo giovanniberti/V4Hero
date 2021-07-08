@@ -3,10 +3,6 @@
 #include <iostream>
 #include <string>
 
-PSprite::PSprite()
-{
-}
-
 PSprite::PSprite(const PSprite& other)
     : t(other.t),
       s(other.s),
