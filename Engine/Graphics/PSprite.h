@@ -44,6 +44,11 @@ public:
     void draw(sf::RenderWindow& window);
     void update(sf::RenderWindow& window);
     void saveToFile(std::string file);
+
+    PSprite(const PSprite& other);
+    PSprite& operator=(PSprite other);
+
+    friend void swap(PSprite& first, PSprite& second);
 };
 
 #endif // PSPRITE_H

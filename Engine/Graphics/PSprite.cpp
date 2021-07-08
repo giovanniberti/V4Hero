@@ -7,6 +7,60 @@ PSprite::PSprite()
 {
 }
 
+PSprite::PSprite(const PSprite& other)
+    : t(other.t),
+      s(other.s),
+      texname(other.texname),
+      qualitySetting(other.qualitySetting),
+      resSetting(other.resSetting),
+      ratioX(other.ratioX),
+      ratioY(other.ratioY),
+      resRatioX(other.resRatioX),
+      resRatioY(other.resRatioY),
+      scaleX(other.scaleX),
+      scaleY(other.scaleY),
+      orX(other.orX),
+      orY(other.orY),
+      baseX(other.baseX),
+      baseY(other.baseY),
+      lx(other.lx),
+      ly(other.ly),
+      angle(other.angle),
+      exported(other.exported)
+{
+    s.setTexture(t, true);
+}
+
+PSprite& PSprite::operator=(PSprite other)
+{
+    swap(*this, other);
+    return *this;
+}
+
+void swap(PSprite& first, PSprite& second)
+{
+    using std::swap;
+    swap(first.t, second.t);
+    swap(first.s, second.s);
+    swap(first.texname, second.texname);
+    swap(first.qualitySetting, second.qualitySetting);
+    swap(first.resSetting, second.resSetting);
+    swap(first.ratioX, second.ratioX);
+    swap(first.ratioY, second.ratioY);
+    swap(first.resRatioX, second.resRatioX);
+    swap(first.resRatioY, second.resRatioY);
+    swap(first.scaleX, second.scaleX);
+    swap(first.scaleY, second.scaleY);
+    swap(first.orX, second.orX);
+    swap(first.orY, second.orY);
+    swap(first.baseX, second.baseX);
+    swap(first.baseY, second.baseY);
+    swap(first.lx, second.lx);
+    swap(first.ly, second.ly);
+    swap(first.angle, second.angle);
+    swap(first.exported, second.exported);
+}
+
 void PSprite::loadFromFile(std::string file, int q)
 {
     std::cout << file << std::endl;
