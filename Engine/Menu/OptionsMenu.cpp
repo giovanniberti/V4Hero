@@ -1,9 +1,8 @@
 #include "OptionsMenu.h"
-#include "ButtonList.h"
-#include <iostream>
-//#include <windows.h>
 #include "../V4Core.h"
-#include "math.h"
+#include "ButtonList.h"
+#include <cmath>
+#include <iostream>
 OptionsMenu::OptionsMenu()
 {
     //ctor
