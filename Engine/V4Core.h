@@ -3,6 +3,7 @@
 
 #include <SFML/Graphics.hpp>
 
+#include <filesystem>
 #include <random>
 
 #include "Config.h"
@@ -74,5 +75,6 @@ public:
 
     //DiscordState state{};
     //discord::Core* core{};
+    std::filesystem::path exePath;
 };
 #endif // V4CORE_H

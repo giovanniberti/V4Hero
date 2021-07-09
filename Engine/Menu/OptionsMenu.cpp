@@ -3,6 +3,10 @@
 #include "ButtonList.h"
 #include <cmath>
 #include <iostream>
+#include <boost/process.hpp>
+
+namespace bp = boost::process;
+
 OptionsMenu::OptionsMenu()
 {
     //ctor
@@ -1373,16 +1377,9 @@ void OptionsMenu::Update(sf::RenderWindow& window, float fps, InputController& i
 
             case 51: {
                 thisConfig->SaveConfig();
+
+                bp::spawn(boost::filesystem::path(v4Core->exePath));
                 v4Core->close_window = true;
-
-                ///Run the game process again
-                /**STARTUPINFO info = {sizeof(info)};
-                PROCESS_INFORMATION processInfo;
-                if (CreateProcess("V4Hero.exe", "", NULL, NULL, TRUE, 0, NULL, NULL, &info, &processInfo)) {
-                    CloseHandle(processInfo.hProcess); // Cleanup since you don't need this
-                    CloseHandle(processInfo.hThread); // Cleanup since you don't need this
-                }**/
-
                 break;
             }
 

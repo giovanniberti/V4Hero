@@ -26,15 +26,16 @@ int main(int argc, char *argv[])
     setupPlatform();
 
     cout << "V4" << endl;
-    auto executable_path = weakly_canonical(fs::path(argv[0])).parent_path();
-    cout << "my directory is " << executable_path << "\n";
+    auto executable_path = weakly_canonical(fs::path(argv[0]));
+    cout << "my directory is " << executable_path.parent_path() << "\n";
     //_setmode(_fileno(stdout), _O_U16TEXT);
     //wchar_t * unicode_text = L"aäbcdefghijklmnoöpqrsßtuüvwxyz";
     //wprintf(L"%s", unicode_text);
 
-    fs::current_path(executable_path);
+    fs::current_path(executable_path.parent_path());
 
     V4Core V4;
+    V4.exePath = executable_path;
     V4.init();
 
     return 0;

@@ -8,6 +8,7 @@ add_definitions(-DPATAFOUR_VERSION="${CMAKE_PROJECT_VERSION}")
 
 include(FetchContent)
 
+find_package(Boost 1.75 COMPONENTS REQUIRED)
 find_package(SFML 2.5 COMPONENTS graphics audio REQUIRED)
 find_package(DiscordSDK 2.5.6 COMPONENTS x86_64 REQUIRED)
 
